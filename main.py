@@ -15,7 +15,7 @@ data = pd.read_excel('list.xlsx', sheet_name='lab')
 new_Ny = float(input('Enter Ny: '))
 new_Nk = float(input('Enter Nk: '))
 
-print([new_Ny, new_Nk])
+print("Ny, Nk: ", [new_Ny, new_Nk])
 
 colors = {"A": "blue", "B": "red", "C": "green"}
 x_coords = list(data['Ny'])
@@ -24,22 +24,22 @@ categories = list(data['classes'])
 
 for i in range(len(x_coords)):
     if categories[i] == "A":
-        XA += x_coords[i] / 5
-        YA += y_coords[i] / 5
+        XA += x_coords[i] / categories.count("A")
+        YA += y_coords[i] / categories.count("A")
     if categories[i] == "B":
-        XB += x_coords[i] / 5
-        YB += y_coords[i] / 5
+        XB += x_coords[i] / categories.count("B")
+        YB += y_coords[i] / categories.count("B")
     if categories[i] == "C":
-        XC += x_coords[i] / 5
-        YC += y_coords[i] / 5
+        XC += x_coords[i] / categories.count("C")
+        YC += y_coords[i] / categories.count("C")
 
-print([XA, YA], [XB, YB], [XC, YC])
+print("Coord first et: ", [XA, YA], "\n""Coord second et:", [XB, YB], "\n""Coord third et:", [XC, YC])
 
 rast_A = math.sqrt((math.pow((XA - new_Ny), 2)) + (math.pow((YA - new_Nk), 2)))
 rast_B = math.sqrt((math.pow((XB - new_Ny), 2)) + (math.pow((YB - new_Nk), 2)))
 rast_C = math.sqrt((math.pow((XC - new_Ny), 2)) + (math.pow((YC - new_Nk), 2)))
 
-print(rast_A, rast_B, rast_C)
+print("First size: ", rast_A, "\n""Second size: ", rast_B, "\n""Third size: ", rast_C)
 
 plt.figure(figsize=(16, 10), dpi=80, facecolor='w', edgecolor='k')
 
