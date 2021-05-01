@@ -1,5 +1,6 @@
 import math
 import func as m
+import pandas as pd
 
 import matplotlib.pyplot as plt
 
@@ -27,6 +28,9 @@ def ex():
                 plt.plot([m.x_coords[n], m.XA], [m.y_coords[n], m.YA], 'blue')
                 plt.plot([m.x_coords[n], m.XB], [m.y_coords[n], m.YB], 'red')
                 plt.plot([m.x_coords[n], m.XC], [m.y_coords[n], m.YC], 'green')
+                break
+
+    info = ['Distance to A: %s' % a, 'Distance to B: %s' % b, 'Distance to S: %s' % c]
 
     for n in range(len(m.x_coords)):
         plt.scatter(m.x_coords[n], m.y_coords[n], c=m.colors[m.categories[n]])
@@ -36,3 +40,10 @@ def ex():
     plt.scatter(m.XC, m.YC, c='green', linewidths=15)
 
     plt.show()
+    df = pd.DataFrame({
+        'Ny': m.x_coords,
+        'Nk': m.y_coords,
+        'class': m.categories,
+        'info': info
+    })
+    df.to_excel('list.xlsx')

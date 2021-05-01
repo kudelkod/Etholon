@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 XA = 0
 YA = 0
 XB = 0
@@ -8,12 +7,12 @@ YB = 0
 XC = 0
 YC = 0
 
-data = pd.read_excel('list.xlsx', sheet_name='lab')
+data = pd.read_excel('list.xlsx', sheet_name='Sheet1')
 
 colors = {"A": "blue", "B": "red", "C": "green"}
 x_coords = list(data['Ny'])
 y_coords = list(data["Nk"])
-categories = list(data['classes'])
+categories = list(data['class'])
 
 for i in range(len(x_coords)):
     if categories[i] == "A":
