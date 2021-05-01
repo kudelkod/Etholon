@@ -58,7 +58,7 @@ def no_ex():
 
     plt.show()
 
-    info = ['Distance to A: %f' % rast_A, 'Distance to B: %f' % rast_B, 'Distance to C: %f' % rast_C,'last coord: (Ny: {0}, Nk: {1})'.format(new_Ny, new_Nk), 'last class: {0}'.format(et)]
+    info = ['Distance to A: %f' % rast_A, 'Distance to B: %f' % rast_B, 'Distance to C: %f' % rast_C, 'last class: {0}'.format(et)]
     # info_et = ['last et coord: (Ny: %f, Nk: %f)' % new_Ny % new_Nk, 'last et: %s' % et]
 
     d1 = m.x_coords
