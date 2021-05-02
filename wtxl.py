@@ -44,10 +44,7 @@ def no_ex():
         plt.plot([new_Ny, m.XA], [new_Nk, m.YA], 'blue')
         plt.plot([new_Ny, m.XB], [new_Nk, m.YB], 'red')
         plt.plot([new_Ny, m.XC], [new_Nk, m.YC], 'green')
-    else:
-        m.categories.append("Unknown")
-        m.y_coords.append(new_Nk)
-        m.x_coords.append(new_Ny)
+
 
     for n in range(len(m.x_coords)):
         plt.scatter(m.x_coords[n], m.y_coords[n], c=m.colors[m.categories[n]])

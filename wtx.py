@@ -19,12 +19,14 @@ def ex():
                 plt.plot([m.x_coords[n], m.XA], [m.y_coords[n], m.YA], 'blue')
                 plt.plot([m.x_coords[n], m.XB], [m.y_coords[n], m.YB], 'red')
                 plt.plot([m.x_coords[n], m.XC], [m.y_coords[n], m.YC], 'green')
+                break
             if b < a and b < c:
                 et = 'B'
                 m.categories[n] = "B"
                 plt.plot([m.x_coords[n], m.XA], [m.y_coords[n], m.YA], 'blue')
                 plt.plot([m.x_coords[n], m.XB], [m.y_coords[n], m.YB], 'red')
                 plt.plot([m.x_coords[n], m.XC], [m.y_coords[n], m.YC], 'green')
+                break
             elif c < a and c < b:
                 et = 'C'
                 m.categories[n] = "C"
